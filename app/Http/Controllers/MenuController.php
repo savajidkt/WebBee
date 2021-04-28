@@ -28,12 +28,12 @@ class MenuController extends BaseController
         	$submenu = DB::table('menu_items')->where('parent_id', '=',$menu->id)->get();
         	$submenuArray=array();
         	foreach ($submenu as $key1 => $smenu) {
-        		$submenuArray[$key1]['id']=$menu->id;
-	        	$submenuArray[$key1]['name']=$menu->name;
-	        	$submenuArray[$key1]['url']=$menu->url;
-	        	$submenuArray[$key1]['parent_id']=$menu->parent_id;
-	        	$submenuArray[$key1]['created_at']=$menu->created_at;
-	        	$submenuArray[$key1]['updated_at']=$menu->updated_at;
+        		$submenuArray[$key1]['id']=$smenu->id;
+	        	$submenuArray[$key1]['name']=$smenu->name;
+	        	$submenuArray[$key1]['url']=$smenu->url;
+	        	$submenuArray[$key1]['parent_id']=$smenu->parent_id;
+	        	$submenuArray[$key1]['created_at']=$smenu->created_at;
+	        	$submenuArray[$key1]['updated_at']=$smenu->updated_at;
 
         	}
 			$menuArray[$key]['children']=$submenuArray;
