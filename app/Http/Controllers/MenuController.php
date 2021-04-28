@@ -39,6 +39,6 @@ class MenuController extends BaseController
 			$menuArray[$key]['children']=$submenuArray;
         }
 
-        return response()->json(['menu' =>$menuArray]);
+        return response()->json($menuArray);
     }
 }

@@ -18,7 +18,7 @@ class EventsController extends BaseController
             ->leftJoin('workshops', 'workshops.event_id', '=', 'events.id')
             ->get();
 
-    		return response()->json(['events' =>$events]);
+    		return response()->json($events);
 
     }
 
@@ -28,7 +28,7 @@ class EventsController extends BaseController
             ->leftJoin('workshops', 'workshops.event_id', '=', 'events.id')->whereDate('start', '>',date('Y-m-d H:i:s'))
             ->get();
 
-    		return response()->json(['events' =>$events]);
+    		return response()->json($events);
 
     	
         //throw new \Exception('implement in coding task 2');
